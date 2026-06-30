@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <title>Contact - Hirva Hospital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- HEADER SAME -->
+<div class="header">
+     <!-- LEFT TEXT -->
+     <div class="logo-text">
+        <h1> હિર્વા હોસ્પિટલ</h1>
+        <p>     પ્રોક્ટો સર્જિકલ યુનિટ</p>
+    </div>
+
+    <div class="navbar">
+
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('signup') }}">Sign Up</a>
+        {% endif %}
+
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+
+    </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="cu-section">
+
+    <!-- LEFT INFO -->
+    <div class="cu-left">
+
+        <h2 class="cu-title">Let's Talk</h2>
+        <p class="cu-sub">અમારી સાથે સંપર્ક કરવા માટે નીચેની માહિતી ઉપયોગ કરો</p>
+
+        <div class="cu-box">
+            <h4>📍 સરનામું</h4>
+            <p> 
+
+                🏢 પ્રથમ માળ, પટેલ ભુવન,<br>
+                📍 ભઉપુરા, માર્કેટ યાર્ડ ની બાજુમા<br>
+
+                👉     કડી - ૩૮૪૪૪૦, ગુજરાત</p><br>
+        </div>
+
+        <div class="cu-box">
+            <h4>📞 ફોન</h4>
+            <p>+91 75 75 08 61 32</p>
+        </div>
+
+        <div class="cu-box">
+            <h4>📧 Email</h4>
+            <p>Hirvahospital@gmail.com</p>
+        </div>
+
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="cu-right">
+
+        <h2 class="cu-title">Send Message</h2>
+
+        <form method="POST">
+
+            <div class="cu-row">
+                <input type="text" name="name" placeholder="તમારું નામ" required>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <input type="text" name="subject" placeholder="વિષય" required>
+
+            <textarea name="message" placeholder="મેસેજ લખો..." required></textarea>
+
+            <button type="submit">મેસેજ મોકલો</button>
+
+        </form>
+
+    </div>
+
+</section>
+<div class="footer">
+
+    <div class="footer-container">
+
+        <!-- Hospital Info -->
+        <div class="footer-box">
+            <h3>🏥 હિર્વા હોસ્પિટલ</h3>
+            <p>પ્રોક્ટો સર્જિકલ યુનિટ</p>
+            <p>વિશ્વાસપૂર્ણ સારવાર માટે અમારી સાથે જોડાઓ</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h4>ઝડપી લિંક્સ</h4>
+            <a href="{{ url_for('home') }}">Home</a><br>
+            <a href="{{ url_for('about') }}">About</a><br>
+            <a href="{{ url_for('services') }}">Services</a><br>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-box">
+            <h4>અમારી સારવાર</h4>
+            <p>હરસ</p>
+            <p>મસા</p>
+            <p>ભગંદર</p>
+            <p>PNS</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h4>સંપર્ક</h4>
+            <p>📞 75 75 08 61 32</p>
+            <p>📍 કડી</p>
+
+            <div class="social-icons">
+                <span>📘</span>
+                <span>📸</span>
+                <span>🌐</span>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 હિર્વા હોસ્પિટલ | All Rights Reserved
+    </p>
+
+</div>
+
+</body>
+</html>

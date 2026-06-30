@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <title>હિર્વા હોસ્પિટલ</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+    <div class="header">
+ <!-- LEFT TEXT -->
+ <div class="logo-text">
+    <h1> હિર્વા હોસ્પિટલ</h1>
+    <p>     પ્રોક્ટો સર્જિકલ યુનિટ</p>
+</div>
+        <div class="auth-buttons">
+
+            {% if current_user.is_authenticated %}
+
+                <!-- ✅ Logout -->
+                <a href="{{ url_for('logout') }}" class="btn login-btn">Logout</a>
+
+                <!-- ✅ Admin -->
+                {% if current_user.role == "admin" %}
+                    <a href="{{ url_for('admin_dashboard') }}" class="btn admin-btn">
+                        ⚙️ Admin
+                    </a>
+                {% endif %}
+
+            {% else %}
+
+                <!-- ✅ Login / Signup -->
+                <a href="{{ url_for('login') }}" class="btn login-btn">Login</a>
+                <a href="{{ url_for('signup') }}" class="btn signup-btn">Sign Up</a>
+
+            {% endif %}
+
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <h2>તમારા પરિવાર માટે શ્રેષ્ઠ સારવાર</h2>
+    <p>અદ્યતન ટેક્નોલોજી અને અનુભવી ડૉક્ટર સાથે વિશ્વસનીય સારવાર</p>
+
+   
+</section>
+
+<!-- Main Content -->
+<div class="container">
+
+    <div class="card">
+        <h2 class="doctor">ડૉ. એકતા પી. પટેલ</h2>
+        <p>M.S. (Ayu.), PGDYN</p>
+        <p>કન્સલ્ટન્ટ પ્રોક્ટોલોજિસ્ટ & એનોરેક્ટલ સર્જન</p>
+
+        <h3>અમારી સેવાઓ</h3>
+        <ul>
+            <li>હરસ (Piles)</li>
+            <li>મસા (Fissure)</li>
+            <li>ભગંદર (Fistula)</li>
+            <li>PNS સારવાર</li>
+            <li>Phimosis સારવાર</li>
+        </ul>
+
+        <p class="price">💰 ઓપરેશન ફક્ત ₹ ૮૮૮૮ માં</p>
+        <p class="contact"><b>📞 એપોઇન્ટમેન્ટ:</b> ૭૫૦૫૦ ૬૫૧૩૨</p>
+    </div>
+
+    <div class="card2">
+        <h3>✨ વિશેષતાઓ</h3>
+        <ul>
+            <li>લેસર ટેક્નોલોજી દ્વારા સારવાર</li>
+            <li>અત્યાધુનિક સાધનો</li>
+            <li>ઝડપી અને સુરક્ષિત સારવાર</li>
+            <li>મેડીક્લેમ સુવિધા ઉપલબ્ધ</li>
+            <li>અનુભવી ડૉક્ટર ટીમ</li>
+        </ul>
+
+        <p class="free">🎉 દર ગુરુવારે નિઃશુલ્ક ઓપીડી સેવા</p>
+        <p class="location">📍 પ્રથમ માળ, પટેલ ભુવન, કડી</p>
+    </div>
+
+</div>
+
+<div class="extra-section">
+
+    <div class="extra-box">
+        <h3>⏰ સમય</h3>
+        <p>સવારે: 9:00 થી 1:00</p>
+        <p>સાંજે: 4:00 થી 8:00</p>
+    </div>
+
+    <div class="extra-box">
+        <h3>⭐ શા માટે અમને પસંદ કરો?</h3>
+        <p>✔ 20+ વર્ષનો અનુભવ</p>
+        <p>✔ હજારો સફળ ઓપરેશન</p>
+        <p>✔ આધુનિક ટેક્નોલોજી</p>
+    </div>
+
+</div>
+<div class="footer">
+
+    <div class="footer-container">
+
+        <!-- Hospital Info -->
+        <div class="footer-box">
+            <h3>🏥 હિર્વા હોસ્પિટલ</h3>
+            <p>પ્રોક્ટો સર્જિકલ યુનિટ</p>
+            <p>વિશ્વાસપૂર્ણ સારવાર માટે અમારી સાથે જોડાઓ</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h4>ઝડપી લિંક્સ</h4>
+            <a href="{{ url_for('home') }}">Home</a><br>
+            <a href="{{ url_for('about') }}">About</a><br>
+            <a href="{{ url_for('services') }}">Services</a><br>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-box">
+            <h4>અમારી સારવાર</h4>
+            <p>હરસ</p>
+            <p>મસા</p>
+            <p>ભગંદર</p>
+            <p>PNS</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h4>સંપર્ક</h4>
+            <p>📞 75 75 08 61 32</p>
+            <p>📍 કડી</p>
+
+            <div class="social-icons">
+                <span>📘</span>
+                <span>📸</span>
+                <span>🌐</span>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 હિર્વા હોસ્પિટલ | All Rights Reserved
+    </p>
+
+</div>
+</body>
+</html>

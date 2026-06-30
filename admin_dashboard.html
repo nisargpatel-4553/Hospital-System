@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="admin-header">
+    <h2>⚙️ Admin Dashboard</h2>
+
+    <!-- LOGOUT -->
+    <a href="{{ url_for('logout') }}" class="admin-logout-btn">Logout</a>
+</div>
+
+<!-- DASHBOARD SECTION -->
+<section class="ad-section">
+
+    <div class="ad-cards">
+
+        <div class="ad-card">
+            <div class="ad-icon">📩</div>
+            <div>
+                <h4>Total Messages</h4>
+                <p>{{ msg_count }}</p>
+            </div>
+        </div>
+
+        <div class="ad-card">
+            <div class="ad-icon">📅</div>
+            <div>
+                <h4>Total Appointments</h4>
+                <p>{{ appt_count }}</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ad-actions">
+        <a href="/admin/messages" class="ad-btn">📩 View Messages</a>
+        <a href="/admin/appointments" class="ad-btn">📅 View Appointments</a>
+    </div>
+
+</section>
+
+<!-- 👤 USERS TABLE -->
+<section class="msg-section">
+
+    <div class="msg-table-container">
+
+        <h3 style="text-align:center; color:black; margin-bottom:15px; ">
+            👤 Login / Signup Users
+        </h3>
+
+        <table class="msg-table">
+
+            <thead>
+                <tr>
+                    <th>ID</th>   <!-- 🔥 SERIAL NUMBER -->
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for u in users %}
+                <tr>
+                    <td>{{ loop.index }}</td>   <!-- 🔥 FIXED -->
+                    <td>{{ u.name }}</td>
+                    <td>{{ u.email }}</td>
+                    <td>{{ u.role }}</td>
+
+                    <td>
+                        <a href="{{ url_for('delete_user', id=u.id) }}" 
+                           class="delete-btn"
+                           onclick="return confirm('Are you sure to delete this user?')">
+                            Delete
+                        </a>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+<div class="footer">
+
+    <div class="footer-container">
+
+        <!-- Hospital Info -->
+        <div class="footer-box">
+            <h3>🏥 હિર્વા હોસ્પિટલ</h3>
+            <p>પ્રોક્ટો સર્જિકલ યુનિટ</p>
+            <p>વિશ્વાસપૂર્ણ સારવાર માટે અમારી સાથે જોડાઓ</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h4>ઝડપી લિંક્સ</h4>
+            <a href="{{ url_for('home') }}">Home</a><br>
+            <a href="{{ url_for('about') }}">About</a><br>
+            <a href="{{ url_for('services') }}">Services</a><br>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-box">
+            <h4>અમારી સારવાર</h4>
+            <p>હરસ</p>
+            <p>મસા</p>
+            <p>ભગંદર</p>
+            <p>PNS</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h4>સંપર્ક</h4>
+            <p>📞 75 75 08 61 32</p>
+            <p>📍 કડી</p>
+
+            <div class="social-icons">
+                <span>📘</span>
+                <span>📸</span>
+                <span>🌐</span>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 હિર્વા હોસ્પિટલ | All Rights Reserved
+    </p>
+
+</div>
+
+</body>
+</html>

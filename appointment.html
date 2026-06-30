@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>એપોઇન્ટમેન્ટ</title>
+
+<!-- External CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div >
+        <a href="{{ url_for('home')  }}" class="back-btn2">⬅ Back</a>
+    </div>
+</div>
+
+<!-- Appointment Form -->
+<div class="appointment-container">
+    <div class="appointment-card">
+
+        <h2 class="appointment-title">📅 એપોઇન્ટમેન્ટ બુક કરો</h2>
+
+        <form method="POST" class="appointment-form">
+
+            <input type="text" name="name" placeholder=" પેશન્ટનું નામ" required>
+
+            <!-- ✅ ONLY NEW FIELD ADDED -->
+            <input type="text" name="phone" placeholder=" કોન્ટેક્ટ નંબર" required>
+
+            <input type="number" name="age" placeholder=" ઉંમર" required>
+            <input type="text" name="disease" placeholder="રોગ / સમસ્યા" required>
+            <input type="date" name="date" required>
+
+            <button type="submit">બુક કરો</button>
+
+        </form>
+
+    </div>
+</div>
+<div class="footer">
+
+    <div class="footer-container">
+
+        <!-- Hospital Info -->
+        <div class="footer-box">
+            <h3>🏥 હિર્વા હોસ્પિટલ</h3>
+            <p>પ્રોક્ટો સર્જિકલ યુનિટ</p>
+            <p>વિશ્વાસપૂર્ણ સારવાર માટે અમારી સાથે જોડાઓ</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h4>ઝડપી લિંક્સ</h4>
+            <a href="{{ url_for('home') }}">Home</a><br>
+            <a href="{{ url_for('about') }}">About</a><br>
+            <a href="{{ url_for('services') }}">Services</a><br>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-box">
+            <h4>અમારી સારવાર</h4>
+            <p>હરસ</p>
+            <p>મસા</p>
+            <p>ભગંદર</p>
+            <p>PNS</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h4>સંપર્ક</h4>
+            <p>📞 75 75 08 61 32</p>
+            <p>📍 કડી</p>
+
+            <div class="social-icons">
+                <span>📘</span>
+                <span>📸</span>
+                <span>🌐</span>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 હિર્વા હોસ્પિટલ | All Rights Reserved
+    </p>
+
+</div>
+
+</body>
+</html>

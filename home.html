@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>હિર્વા હોસ્પિટલ</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+
+    <div class="logo-text">
+        <h1> હિર્વા હોસ્પિટલ</h1>
+        <p>પ્રોક્ટો સર્જિકલ યુનિટ</p>
+    </div>
+
+    <div class="navbar">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('signup') }}">Sign Up</a>
+        {% endif %}
+
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </div>
+
+</div>
+
+<!-- Hero -->
+<div class="hero">
+    <h2>તમારા પરિવાર માટે શ્રેષ્ઠ સારવાર</h2>
+    <p>20 વર્ષનો અનુભવ સાથે નિષ્ણાત સારવાર</p>
+
+    
+</div>
+
+<!-- Services -->
+<h2 style="text-align:center;">અમારી ખાસ સારવાર</h2>
+
+
+
+<!-- Doctor -->
+<div class="doctor">
+    <h2>ડૉક્ટર વિશે</h2>
+    <p>
+        <b>ડૉ. એકતા પી. પટેલ</b><br>
+        M.S. (Ayu.), PGDYN<br>
+        પ્રોક્ટોલોજિસ્ટ & એનોરેક્ટલ સર્જન<br>
+        ગોલ્ડ મેડાલિસ્ટ
+    </p>
+</div>
+
+<!-- Timing -->
+<div class="timing">
+    <h3>સમય</h3>
+    <p>સવારે: 9:00 થી 1:00 | સાંજે: 4:00 થી 8:00</p>
+</div>
+
+<!-- ✅ UPDATED FOOTER -->
+<div class="footer">
+
+    <div class="footer-container">
+
+        <!-- Hospital Info -->
+        <div class="footer-box">
+            <h3>🏥 હિર્વા હોસ્પિટલ</h3>
+            <p>પ્રોક્ટો સર્જિકલ યુનિટ</p>
+            <p>વિશ્વાસપૂર્ણ સારવાર માટે અમારી સાથે જોડાઓ</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h4>ઝડપી લિંક્સ</h4>
+            <a href="{{ url_for('home') }}">Home</a><br>
+            <a href="{{ url_for('about') }}">About</a><br>
+            <a href="{{ url_for('services') }}">Services</a><br>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-box">
+            <h4>અમારી સારવાર</h4>
+            <p>હરસ</p>
+            <p>મસા</p>
+            <p>ભગંદર</p>
+            <p>PNS</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h4>સંપર્ક</h4>
+            <p>📞 75 75 08 61 32</p>
+            <p>📍 કડી</p>
+
+            <div class="social-icons">
+                <span>📘</span>
+                <span>📸</span>
+                <span>🌐</span>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 હિર્વા હોસ્પિટલ | All Rights Reserved
+    </p>
+
+
+<a href="https://wa.me/917505065132?text=Hello%20I%20want%20to%20book%20an%20appointment" 
+   class="whatsapp-btn" target="_blank">
+   💬 Book Appointment
+</a>
+</div>
+</body>
+</html>

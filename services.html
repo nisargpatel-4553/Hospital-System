@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <title>Hirva Hospital - Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="srv-header">
+
+    <div class="srv-logo-text">
+        <h1> હિર્વા હોસ્પિટલ</h1>
+        <p>પ્રોક્ટો સર્જિકલ યુનિટ</p>
+    </div>
+
+    <div class="srv-navbar">
+
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('signup') }}">Sign Up</a>
+        {% endif %}
+
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+
+    </div>
+</div>
+
+<!-- Services -->
+<div class="srv-services-section">
+    <h2 class="srv-title">અમારી ખાસ સારવાર</h2>
+
+    <div class="srv-cards">
+
+        <div class="srv-card">
+            <img src="{{ url_for('static', filename='harsh.jpg') }}" class="srv-img">
+            <h3 class="srv-card-title">હરસ</h3>
+            <p>આધુનિક સારવાર</p>
+        </div>
+
+        <div class="srv-card">
+            <img src="{{ url_for('static', filename='Piles.png') }}" class="srv-img">
+            <h3 class="srv-card-title">મસા</h3>
+            <p>દર્દ વગર સારવાર</p>
+        </div>
+
+        <div class="srv-card">
+            <img src="{{ url_for('static', filename='bhagandar.png') }}" class="srv-img">
+            <h3 class="srv-card-title">ભગંદર</h3>
+            <p>લેઝર ટ્રીટમેન્ટ</p>
+        </div>
+
+        <div class="srv-card">
+            <img src="{{ url_for('static', filename='pns.png') }}" class="srv-img">
+            <h3 class="srv-card-title">PNS</h3>
+            <p>સ્પેશિયલ સર્જરી</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Details -->
+<div class="srv-details">
+
+    <div class="srv-box">
+        <h2 class="srv-box-title">મસા (Piles)</h2>
+        <p><b>શું છે?</b> પાઈલ્સએ મળદ્વાર તથા ગુદા આસપાસ આવેલી શિરાઓમાં સોજો આવી જવાથી થતી તકલીફ છે.</p>
+        <p><b>કેમ થાય?</b> કબજિયાત, લાંબા સમય સુધી બેસવું.</p>
+        <p><b>સારવાર:</b> લેઝર ટ્રીટમેન્ટ અને દવાઓ.</p>
+    </div>
+
+    <div class="srv-box">
+        <h2 class="srv-box-title">હરસ (ફીશર)</h2>
+        <p><b>શું છે?</b> ફીશર મળદ્વારમાં ચીરા પડે છે.</p>
+        <p><b>કેમ થાય?</b> ફાઈબર ઓછું, જોરથી ટોયલેટ.</p>
+        <p><b>સારવાર:</b> સર્જરી અને દવા.</p>
+    </div>
+
+    <div class="srv-box">
+        <h2 class="srv-box-title">ભગંદર (Fistula)</h2>
+        <p><b>શું છે?</b> મળમાર્ગ નજીક નળાકાર રસ્તો બને છે.</p>
+        <p><b>કેમ થાય?</b> ઇન્ફેક્શન.</p>
+        <p><b>સારવાર:</b> લેઝર સર્જરી.</p>
+    </div>
+
+</div>
+
+<!-- Contact -->
+<div class="srv-contact">
+    <h2>આજે જ સંપર્ક કરો</h2>
+    <h3>📞 94 94 08 61 32</h3>
+
+    <a href="/contact">
+        <button class="srv-contact-btn">📅 સંપર્ક કરો</button>
+    </a>
+</div>
+
+<!-- Footer -->
+<div class="srv-footer">
+
+    <div class="srv-footer-container">
+
+        <div class="srv-footer-box">
+            <h3>🏥 હિર્વા હોસ્પિટલ</h3>
+            <p>પ્રોક્ટો સર્જિકલ યુનિટ</p>
+            <p>વિશ્વાસપૂર્ણ સારવાર માટે અમારી સાથે જોડાઓ</p>
+        </div>
+
+        <div class="srv-footer-box">
+            <h4>ઝડપી લિંક્સ</h4>
+            <a href="{{ url_for('home') }}">Home</a><br>
+            <a href="{{ url_for('about') }}">About</a><br>
+            <a href="{{ url_for('services') }}">Services</a><br>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+
+        <div class="srv-footer-box">
+            <h4>અમારી સારવાર</h4>
+            <p>હરસ</p>
+            <p>મસા</p>
+            <p>ભગંદર</p>
+            <p>PNS</p>
+        </div>
+
+        <div class="srv-footer-box">
+            <h4>સંપર્ક</h4>
+            <p>📞 75 75 08 61 32</p>
+            <p>📍 કડી</p>
+
+            <div class="srv-social">
+                <span>📘</span>
+                <span>📸</span>
+                <span>🌐</span>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="srv-footer-bottom">
+        © 2026 હિર્વા હોસ્પિટલ | All Rights Reserved
+    </p>
+
+</div>
+
+</body>
+</html>

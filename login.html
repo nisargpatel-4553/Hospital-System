@@ -1,0 +1,103 @@
+<html lang="gu">
+<head>
+<title>લૉગિન</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="form-navbar">
+    <a href="{{ url_for('index') }}">⬅ Back</a>
+    <a href="{{ url_for('signup') }}">Sign up </a>
+</div>
+
+<div class="form-auth">
+    <div class="form-auth-card">
+
+        <h2 class="form-title"> Login</h2>
+
+        <div class="form-inner-card">
+
+        <form method="POST">
+
+            <input class="auth-input" type="text" name="name" placeholder="👤 તમારું નામ દાખલ કરો" required>
+
+            <!-- PASSWORD -->
+            <div style="position:relative;">
+                <input class="auth-input" type="password" id="password" name="password" placeholder="🔒 પાસવર્ડ દાખલ કરો" required>
+                <span onclick="togglePassword()" 
+                style="position:absolute; right:15px; top:50%; transform:translateY(-50%); cursor:pointer; color:white;">
+                👁
+                </span>
+            </div>
+
+            <button class="auth-btn" type="submit">લૉગિન કરો</button>
+
+        </form>
+    </div>
+
+        <div class="form-link">
+            નવું એકાઉન્ટ? <a href="{{ url_for('signup') }}">સાઇન અપ</a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function togglePassword() {
+    var x = document.getElementById("password");
+    x.type = (x.type === "password") ? "text" : "password";
+}
+</script>
+
+<div class="footer">
+
+    <div class="footer-container">
+
+        <!-- Hospital Info -->
+        <div class="footer-box">
+            <h3>🏥 હિર્વા હોસ્પિટલ</h3>
+            <p>પ્રોક્ટો સર્જિકલ યુનિટ</p>
+            <p>વિશ્વાસપૂર્ણ સારવાર માટે અમારી સાથે જોડાઓ</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h4>ઝડપી લિંક્સ</h4>
+            <a href="{{ url_for('home') }}">Home</a><br>
+            <a href="{{ url_for('about') }}">About</a><br>
+            <a href="{{ url_for('services') }}">Services</a><br>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-box">
+            <h4>અમારી સારવાર</h4>
+            <p>હરસ</p>
+            <p>મસા</p>
+            <p>ભગંદર</p>
+            <p>PNS</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h4>સંપર્ક</h4>
+            <p>📞 75 75 08 61 32</p>
+            <p>📍 કડી</p>
+
+            <div class="social-icons">
+                <span>📘</span>
+                <span>📸</span>
+                <span>🌐</span>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 હિર્વા હોસ્પિટલ | All Rights Reserved
+    </p>
+
+</div>
+</body>
+</html>
